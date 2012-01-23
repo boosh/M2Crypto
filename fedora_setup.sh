@@ -6,7 +6,7 @@
 # Usage: ./fedora_setup.sh [setup.py options]
 #
 
-arch=`uname -m`
+arch=`uname --hardware-platform`
 for i in SWIG/_{ec,evp}.i; do
   sed -i -e "s/opensslconf\./opensslconf-${arch}\./" "$i"
 done
